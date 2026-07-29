@@ -1,8 +1,20 @@
-# spotify-siri
+# Siri + Spotify on macOS — "Hey Siri, Play on Spotify"
 
-Say "Hey Siri, Play on Spotify," tell it a song, album, artist, playlist, or
-"my liked songs," and it actually plays on your Mac's Spotify app — no
-official Spotify Shortcuts support required.
+**Control Spotify with Siri on macOS** using Apple Shortcuts and the Spotify
+Web API. Spotify has no official Siri integration on Mac, so saying "Hey
+Siri, play \<song\> on Spotify" normally does nothing, or worse, plays it in
+Apple Music instead. This project fixes that: say "Hey Siri, Play on
+Spotify," tell it a song, album, artist, playlist, or "my liked songs," and
+it actually starts playing in the real Spotify desktop app.
+
+> Looking for how to make Siri work with Spotify on Mac, a Spotify Siri
+> Shortcut, or a way to get "Hey Siri play [song] on Spotify" working on
+> macOS? This is a free, open-source Shortcut + Python script that does
+> exactly that.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Platform](https://img.shields.io/badge/platform-macOS-black)
+![Python](https://img.shields.io/badge/python-3-blue)
 
 ```
 "Hey Siri, Play on Spotify"
@@ -217,6 +229,45 @@ spotify_siri/
   credential.
 - This project only requests the scopes it needs: playback control, and
   read-only access to your library, followed artists, and playlists.
+
+## FAQ
+
+#### Can Siri control Spotify on macOS?
+
+Not natively — Spotify hasn't published an official Shortcuts/Siri
+integration for macOS, and Siri's default "play music" intent is hard-wired
+to Apple Music. This project is a workaround: a Shortcut captures what you
+say, and a script talks to the Spotify Web API directly to search and start
+playback in the Spotify Mac app.
+
+#### How do I get "Hey Siri, play [song] on Spotify" working on Mac?
+
+Follow the [Setup](#setup) section above: create a Spotify Developer app,
+install this script, and build the one Shortcut described. Once it's set
+up, "Hey Siri, Play on Spotify" → say a song name → Spotify plays it.
+
+#### Does this need Spotify Premium?
+
+Yes. As of Spotify's March 2026 developer policy, the Web API only works in
+Development Mode if the app owner's account has an active Premium
+subscription — see [Requirements](#requirements).
+
+#### Can Siri play my Spotify playlists or Liked Songs on Mac?
+
+Yes — say `"my liked songs"` for your Liked Songs, or `"my <playlist name>"`
+for any playlist in your library. See [What you can say](#what-you-can-say).
+
+#### Why does Siri open Apple Music instead of Spotify?
+
+That's Siri's default behavior for "play" requests with no Spotify
+integration installed. This project sidesteps it entirely by using a custom
+Shortcut phrase ("Play on Spotify") instead of the generic "play \<song\>"
+intent, so it never hits Siri's built-in Apple Music handler.
+
+#### Is there an official Spotify Shortcuts app for macOS?
+
+No, and there hasn't been one historically. This repo exists specifically
+because that gap forces a Web-API-based workaround.
 
 ## License
 
