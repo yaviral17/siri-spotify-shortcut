@@ -15,6 +15,7 @@ it actually starts playing in the real Spotify desktop app.
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Platform](https://img.shields.io/badge/platform-macOS-black)
 ![Python](https://img.shields.io/badge/python-3-blue)
+![Visitors](https://komarev.com/ghpvc/?username=yaviral17&repo=siri-spotify-shortcut&label=Visitors&color=1db954)
 
 ```
 "Hey Siri, Play on Spotify"
